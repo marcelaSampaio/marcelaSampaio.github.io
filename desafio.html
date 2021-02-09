@@ -1,0 +1,150 @@
+<html>
+	<style>
+	#display{
+		height: 20%;
+		width: 100%;
+		margin: 0;
+		border: 0;
+		position: relative;
+		text-align: left;
+		font-family: sans-serif;
+		
+	}
+	#gameContainer{
+		margin: 0;
+		border: 0;
+		position: relative;
+		width: 450px;
+		height: 250px;
+		top: 10%;
+  	
+
+	}	
+	#background{
+		height: 90%;
+		margin: 0;
+		position: relative;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background: url("https://i.ibb.co/TTrFwcJ/background.png");
+		z-index: -1;
+
+	}
+	#floor{
+		margin: 0;
+		height: 10%;
+		position: relative;
+		bottom: 0;
+		background: url("https://i.ibb.co/NF23Ydq/grass.png");
+		z-index: 0;
+
+	}
+	#gun{
+		height: 100%;
+		border: 0;
+		margin: 0;
+		box-sizing: border-box;
+		overflow: visible;
+		position: relative;
+		top: 35px;
+		left: 56px;
+		background: url("https://i.ibb.co/b59vtCV/cannon.png");
+		background-repeat: no-repeat;
+		z-index: 2;
+
+	}
+	#tank{
+		height: 100px;
+		width: 100px;
+		border: 0;
+		margin: 0;
+		overflow: visible;
+		position: absolute;
+		bottom: 0px;
+		left: 10px;
+		background: url("https://i.ibb.co/KWpgDf4/tank.png");
+		background-repeat: no-repeat;
+		z-index: 3;
+	}
+	#circle {
+		border: 0;
+		margin: 0;
+		box-sizing: border-box;
+		position: absolute;
+	    background: red;
+	    border-radius: 50%;
+	    width: 10px;
+	    height: 10px;
+	   	display: none;
+	   	z-index: 0;
+	   	bottom : 30;
+	   	left: 35;
+	}
+	#completeTank{
+		height: 100px;
+		width: 100px;
+		border: 0;
+		margin: 0;
+		box-sizing: border-box;
+		position: absolute;
+		overflow: visible;
+		bottom: 0px;
+		left: 10px;
+		z-index: 2;
+	}
+	#info{
+		height: auto;
+		width: 220;
+		display: flex;
+   		justify-content: center;
+   		float : right;
+   		position: absolute;
+   		right: 50;
+   		top: 50;
+   		border-style: solid;
+   		border-radius: 10%;
+   		
+	}
+	#myCanvas {
+		height: 100%;
+		width: 100%;
+		top:0;
+		left:0;
+		background: transparent;
+		position: absolute;
+	}
+	</style>
+
+	<script type="text/javascript" src="./gameView.js"></script>
+	<script type="text/javascript" src="./parabolaService.js"></script>
+	<script type="text/javascript" src="./gameController.js"></script>
+
+	<body onload ="startGame()">
+		<div id = "display">
+			<h2 style="font-weight: lighter">Desafio de Lógica e Programação - Graphic Programmer<h2>
+			
+			<h3 style="font-weight: lighter">Utilize as setas direcionais para ajustar a posição do canhão.<br>
+					Aperte espaço para disparar</h3>
+					<img src="https://uploads-ssl.webflow.com/5b246014a3234f12eaa9303e/5b2460724636a7d432cbe6f6_Ativo%201.png" height="40" alt="Molde.me" loading="lazy">
+
+		</div>
+			<div id ="gameContainer">
+				<canvas id = "myCanvas"></canvas>
+				<div id ="background"></div>
+				<div id ="floor">
+					<div id ="completeTank">
+						<div id ="tank"></div> 
+						<div id ="gun"></div>
+					</div>
+				 </div>
+				 <div id ="circle"></div>
+				 <div id ="info">
+				 		<p id="texto">Informações da Trajetória:</p>
+				 </div>
+			</div>
+		
+	</body>	
+</html>
+
+
